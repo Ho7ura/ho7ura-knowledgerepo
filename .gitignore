@@ -1,0 +1,28 @@
+# === 密钥 ===
+.env
+.claude/
+
+# === Python ===
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# === 模型文件 ===
+*.pt
+*.task
+*.ts
+
+# === 录制文件 ===
+recordings/
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === OS ===
+.DS_Store
+Thumbs.db

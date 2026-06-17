@@ -1,0 +1,32 @@
+# === 密钥 & 配置 ===
+.env
+.claude/
+
+# === Python ===
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# === 模型文件（太大，不进 git，通过 README 说明下载方式） ===
+*.pt
+*.task
+*.ts
+
+# === 录制文件 ===
+recordings/
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Docker ===
+# （如需保留镜像配置，可取消注释）
+# *.tar
