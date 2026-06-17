@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- 顶部标题栏 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        style="@style/CardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_medium">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTestType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="测试类型"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_size_title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTestStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:alpha="0.9"
+                    android:text="运行中"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_size_caption" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/statusIndicator"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/status_indicator"
+                android:backgroundTint="@color/accent" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 实时曲线卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardChart"
+        style="@style/CardContained"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_small">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="实时曲线"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClearChart"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="清空"
+                    android:textColor="@color/text_secondary"
+                    app:icon="@android:drawable/ic_menu_delete"
+                    app:iconTint="@color/text_secondary" />
+            </LinearLayout>
+
+            <com.electrosync.ecworkstation.view.RealTimeChartView
+                android:id="@+id/realTimeChart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_weight="1" />
+
+            <!-- 数值显示区域 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardConcentrationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/card_chart_header"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前电流"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvCurrentValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.000 μA"
+                            android:textColor="@color/text_current"
+                            android:textSize="@dimen/text_size_body"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="汗糖浓度"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvConcentrationValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.000 a.u."
+                            android:textColor="@color/text_concentration"
+                            android:textSize="@dimen/text_size_body"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="时间"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvTimeValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.00 s"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_size_body"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 控制按钮区域 -->
+    <LinearLayout
+        android:id="@+id/layoutControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/cardChart">
+
+        <!-- 第一行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartTest"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:text="开始"
+                app:cornerRadius="@dimen/button_corner_radius"
+                app:icon="@android:drawable/ic_media_play"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPauseTest"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="暂停"
+                app:cornerRadius="@dimen/button_corner_radius"
+                app:icon="@android:drawable/ic_media_pause"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStopTest"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="停止"
+                android:textColor="@color/error"
+                app:cornerRadius="@dimen/button_corner_radius"
+                app:icon="@android:drawable/ic_delete"
+                app:iconGravity="textStart"
+                app:iconTint="@color/error"
+                app:strokeColor="@color/error" />
+        </LinearLayout>
+
+        <!-- 第二行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveData"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="保存数据"
+                app:cornerRadius="@dimen/button_corner_radius"
+                app:icon="@android:drawable/ic_menu_save"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClearData"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="清除数据"
+                app:cornerRadius="@dimen/button_corner_radius"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

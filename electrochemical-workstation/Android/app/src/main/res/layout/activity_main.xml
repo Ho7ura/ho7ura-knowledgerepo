@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <!-- 连接状态卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardConnection"
+        style="@style/CardContained"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/statusIndicator"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/status_indicator"
+                    android:backgroundTint="@color/error" />
+
+                <TextView
+                    android:id="@+id/tvConnectionStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:layout_weight="1"
+                    android:text="未连接"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnHistory"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="历史"
+                    android:textColor="@color/primary"
+                    app:icon="@android:drawable/ic_menu_recent_history"
+                    app:iconTint="@color/primary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnScanDevices"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_weight="1"
+                    android:text="扫描设备"
+                    app:cornerRadius="@dimen/button_corner_radius" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDisconnect"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="断开连接"
+                    android:textColor="@color/error"
+                    app:cornerRadius="@dimen/button_corner_radius"
+                    app:strokeColor="@color/error" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 测试方法卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTests"
+        style="@style/CardContained"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardConnection">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="电化学测试方法"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTestIT"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:enabled="false"
+                    android:text="IT - 计时电流法"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/button_corner_radius" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTestCV"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:enabled="false"
+                    android:text="CV - 循环伏安法"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/button_corner_radius" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTestDPV"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:enabled="false"
+                    android:text="DPV - 微分脉冲伏安法"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/button_corner_radius" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTestSWV"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:enabled="false"
+                    android:text="SWV - 方波伏安法"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/button_corner_radius" />
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

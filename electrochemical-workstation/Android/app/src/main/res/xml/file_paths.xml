@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 外部存储根目录 -->
+    <external-path name="external_files" path="." />
+
+    <!-- 应用内部存储 -->
+    <files-path name="internal_files" path="." />
+
+    <!-- 应用缓存目录 -->
+    <cache-path name="cache_files" path="." />
+
+    <!-- 应用外部存储目录 -->
+    <external-files-path name="external_app_files" path="." />
+</paths>

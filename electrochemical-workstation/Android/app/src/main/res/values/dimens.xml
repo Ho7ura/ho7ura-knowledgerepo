@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 卡片样式 -->
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+
+    <!-- 间距 -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+
+    <!-- 文字大小 -->
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_subtitle">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_caption">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <!-- 按钮 -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_corner_radius">8dp</dimen>
+
+    <!-- 图标 -->
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="icon_size_large">48dp</dimen>
+</resources>

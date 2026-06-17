@@ -1,0 +1,12 @@
+# Android build
+.gradle/
+build/
+*.apk
+local.properties
+.idea/workspace.xml
+
+# IDE
+.vscode/
+
+# PlatformIO
+.pio/

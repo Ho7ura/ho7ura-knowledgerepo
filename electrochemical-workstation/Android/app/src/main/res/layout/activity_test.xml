@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- 顶部标题栏 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        style="@style/CardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:id="@+id/tvTestType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试类型"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvParameterHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:alpha="0.9"
+                android:text="参数说明"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_size_caption" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 参数设置卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardParameters"
+        style="@style/CardContained"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutControls"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="测试参数"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:id="@+id/layoutParameters"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 控制按钮 -->
+    <LinearLayout
+        android:id="@+id/layoutControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartTest"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:text="下一步"
+            android:textSize="@dimen/text_size_subtitle"
+            app:cornerRadius="@dimen/button_corner_radius"
+            app:icon="@android:drawable/ic_media_next"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

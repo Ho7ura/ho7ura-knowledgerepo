@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        style="@style/CardContained"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫描蓝牙设备"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_subtitle"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvScanStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="准备扫描"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartScan"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="开始扫描"
+                app:cornerRadius="@dimen/button_corner_radius" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:clipToPadding="false"
+        android:padding="@dimen/spacing_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding">
+
+        <!-- 测试类型标签 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTestType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IT"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_caption"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 测试信息 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="IT测试 2026-03-03 14:30"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_subtitle"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTestTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="2026-03-03 14:30:25"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <TextView
+                android:id="@+id/tvParametersSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="1000mV, 10ms, 100s"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDataPoints"
+                    style="@style/Widget.Material3.Chip.Assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10000 点"
+                    android:textSize="@dimen/text_size_caption"
+                    app:chipBackgroundColor="@color/primary_light" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDuration"
+                    style="@style/Widget.Material3.Chip.Assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:text="140.5s"
+                    android:textSize="@dimen/text_size_caption"
+                    app:chipBackgroundColor="@color/accent_light" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnView"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_caption" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExport"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导出"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_size_caption" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除"
+                android:textColor="@color/error"
+                android:textSize="@dimen/text_size_caption" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

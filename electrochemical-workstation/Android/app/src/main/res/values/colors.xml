@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 -->
+    <color name="primary">#1976D2</color>
+    <color name="primary_dark">#1565C0</color>
+    <color name="primary_light">#BBDEFB</color>
+
+    <!-- 强调色 -->
+    <color name="accent">#00BCD4</color>
+    <color name="accent_light">#B2EBF2</color>
+
+    <!-- 状态颜色 -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+
+    <!-- 背景色 -->
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_chart_header">#F5F5F5</color>
+
+    <!-- 文字颜色 -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_current">#2196F3</color>
+    <color name="text_concentration">#FB8C00</color>
+
+    <!-- 分割线 -->
+    <color name="divider">#E0E0E0</color>
+
+    <!-- 半透明 -->
+    <color name="overlay">#80000000</color>
+</resources>
